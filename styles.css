@@ -1,0 +1,231 @@
+:root {
+  --primaryColor: linear-gradient(90deg, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+  --paleBlue: hsl(243, 100%, 93%);
+  --grayishBlue: hsl(229, 7%, 55%);
+  --darkBlue: hsl(228, 56%, 26%);
+  --veryDarkBlue: hsl(229, 57%, 11%);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  font-family: 'Raleway', sans-serif;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.u-wrapper {
+  max-width: 1280px;
+  margin: auto;
+  padding: 0 1em;
+}
+
+.main {
+  min-height: 100vh;
+  min-width: 100vw;
+  background: url('./images/bg-mobile.svg') no-repeat;
+  background-size: cover;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-content {
+  max-width: 1280px;
+  margin: auto;
+  padding: 0 2em;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-box {
+  width: 100%;
+  background: var(--darkBlue);
+}
+
+.header {
+  /* margin-bottom: 10px; */
+  height: 160px;
+  border-radius: 10px 80px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 3em;
+  justify-content: center;
+}
+
+.header .header-icons {
+  margin-top: 1.5em;
+}
+
+.header .header-icons .header-icon {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  border-radius: 5px;
+  background-color: var(--veryDarkBlue);
+  background-size: 1.2em;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 1.5em;
+}
+
+.header .header-icons .header-icon:last-child {
+  margin-right: 0;
+}
+
+.header .header-icons .file {
+  background-image: url('./images/icon-document.svg');
+}
+
+.header .header-icons .directory {
+  background-image: url('./images/icon-folder.svg');
+}
+
+.header .header-icons .upload {
+  background-image: url('./images/icon-upload.svg');
+}
+
+.content {
+  margin-top: 1em;
+  height: 140px;
+  border-radius: 10px;
+  text-align: center;
+  padding: 2em;
+  position: relative;
+}
+
+.content .content-text {
+  color: var(--grayishBlue);
+  font-size: .9em;
+}
+
+.content .content-text span {
+  color: white;
+}
+
+.content .content-status .content-bar {
+  width: 100%;
+  height: 15px;
+  border-radius: 10px;
+  margin: 10px auto;
+  background-color: var(--veryDarkBlue);
+  padding: 2px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.content .content-status .content-bar .content-use {
+  width: 75%;
+  height: 11px;
+  border-radius: 10px;
+  background: var(--primaryColor);
+  padding: 1px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.content .content-status .content-bar .content-use .content-final {
+  width: 9px;
+  height: 9px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.content .content-status .content-indicator {
+  display: flex;
+  justify-content: space-between;
+  color: var(--grayishBlue);
+  font-size: .8em;
+  font-weight: 700;
+}
+
+
+.content .content-footer {
+  width: 50%;
+  height: 50px;
+  position: absolute;
+  top: 80%;
+  left: 25%;
+  background-color: white;
+  border-radius: 5px;
+  color: #000;
+  font-size: 1.6em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-family: 'Raleway', sans-serif;
+  text-transform: uppercase;
+}
+
+.content .footer-clip {
+  display: none;
+}
+
+.content .content-footer p {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content .content-footer p sup {
+  font-size: .5em;
+  color: var(--grayishBlue);
+  margin-left: 1em;
+}
+
+@media screen and (min-width: 1024px) {
+
+  .main-content {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  .header {
+    height: 180px;
+    width: 25%;
+    margin-right: 30px;
+  }
+
+  .content {
+    width: 40%;
+    text-align: left;
+  }
+
+  .content .content-footer {
+    top: -30%;
+    left: 60%;
+    width: 30%;
+    height: 40%;
+  }
+
+  .content .footer-clip {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    position: absolute;
+    top: 7%;
+    right: 10.1%;
+    clip-path: polygon(0 1%, 100% 100%, 100% 0);
+  }
+}
